@@ -1,0 +1,195 @@
+"use client"
+
+import Head from 'next/head';
+import MovieSearch from './components/MovieSearch';
+import React, { useEffect } from 'react';
+import particles_config from '../particlesjs-config.json';
+import { useCallback } from "react";
+import Particles from "react-tsparticles";
+//import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+import { loadSlim } from "tsparticles-slim";
+
+const Home: React.FC = () => {
+  const handleCanvas2Click = () => {
+    // Create a Blob with the desired text content
+    const textContent = 'Hello, this is the content of the downloaded file!';
+    const blob = new Blob([textContent], { type: 'text/plain' });
+
+    // Create an anchor element to trigger the download
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'download.txt';
+
+    // Append the anchor to the document and trigger the click event
+    document.body.appendChild(a);
+    a.click();
+
+    // Remove the anchor from the document
+    document.body.removeChild(a);
+  };
+
+  const handleSubmitButtonStyleChange = () => {
+    const myDiv = document.getElementById(
+      'myDiv'
+    ) as HTMLButtonElement;
+
+    let className = 'container mx-auto py-10 px-4 flex flex-col items-center justify-center relative transition-all ease-in-out duration-500';
+    myDiv.className = className;
+  };
+
+  useEffect(() => {
+    // Code to draw on the first canvas
+    const canvas1 = document.getElementById('myCanvas1') as HTMLCanvasElement;
+    const context1 = canvas1.getContext('2d');
+
+    if (context1) {
+      context1.fillStyle = 'blue';
+      context1.fillRect(50, 50, 1000, 1000);
+      context1.fillStyle = 'black';
+      context1.fillRect(75, 75, 100, 100);
+      context1.fillStyle = 'blue';
+      context1.fillRect(100, 100, 50, 50);
+      context1.fillStyle = 'black';
+      context1.fillRect(112.5, 112.5, 25, 25);
+    }
+
+    const canvas2 = document.getElementById('myCanvas2') as HTMLCanvasElement;
+    const context2 = canvas2.getContext('2d');
+
+    if (context2) {
+      context2.fillStyle = 'blue';
+      context2.fillRect(50, 50, 1000, 1000);
+      context2.fillStyle = 'black';
+      context2.fillRect(75, 75, 100, 100);
+      context2.fillStyle = 'blue';
+      context2.fillRect(100, 100, 50, 50);
+      context2.fillStyle = 'black';
+      context2.fillRect(112.5, 112.5, 25, 25);
+    }
+
+    canvas1.addEventListener('click', () => {
+      window.location.href = 'https://tengr.ai';
+    });
+
+    canvas2.addEventListener('click', handleCanvas2Click);
+
+    return () => {
+      canvas1.removeEventListener('click', () => {
+        window.location.href = 'https://tengr.ai';
+      });
+      canvas2.removeEventListener('click', handleCanvas2Click);
+    };
+  }, []);
+  const particlesInit = useCallback(async engine => {
+        console.log(engine);
+        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+        // starting from v2 you can add only the features you need reducing the bundle size
+        //await loadFull(engine);
+        await loadSlim(engine);
+    }, []);
+
+    const particlesLoaded = useCallback(async container => {
+        await console.log(container);
+    }, []);
+  return (
+    <div className="min-h-screen">
+        <Particles id="tsparticles" options={{
+                background: {
+                    color: {
+                        value: "#0d47a1",
+                    },
+                },
+                fpsLimit: 120,
+                interactivity: {
+                    events: {
+                        onClick: {
+                            enable: true,
+                            mode: "push",
+                        },
+                        onHover: {
+                            enable: true,
+                            mode: "repulse",
+                        },
+                        resize: true,
+                    },
+                    modes: {
+                        push: {
+                            quantity: 4,
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4,
+                        },
+                    },
+                },
+                particles: {
+                    color: {
+                        value: "#ffffff",
+                    },
+                    links: {
+                        color: "#ffffff",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.5,
+                        width: 1,
+                    },
+                    move: {
+                        direction: "none",
+                        enable: true,
+                        outModes: {
+                            default: "bounce",
+                        },
+                        random: false,
+                        speed: 6,
+                        straight: false,
+                    },
+                    number: {
+                        density: {
+                            enable: true,
+                            area: 800,
+                        },
+                        value: 80,
+                    },
+                    opacity: {
+                        value: 0.5,
+                    },
+                    shape: {
+                        type: "circle",
+                    },
+                    size: {
+                        value: { min: 1, max: 5 },
+                    },
+                },
+                detectRetina: true,
+            }} init={particlesInit} loaded={particlesLoaded} />
+      <Head>
+        <title>Movie Database</title>
+        <meta name="description" content="Movie Database for users" />
+      </Head>
+
+      <main id="myDiv" className="container mx-auto py-100 px-4 h-screen flex flex-col items-center content-ce justify-center relative">
+        <h1 className="text-7xl text-blue-500 font-bold mb-8">
+          Movie Database
+        </h1>
+        <MovieSearch handleSubmitButtonStyleChange={handleSubmitButtonStyleChange} />
+
+        <canvas
+          id="myCanvas1"
+          width="200"
+          height="200"
+          style={{ position: 'absolute', top: '0', left: '0' }}
+        ></canvas>
+
+        <canvas
+          id="myCanvas2"
+          width="200"
+          height="200"
+          style={{ position: 'absolute', top: '0', right: '3%' }}
+        ></canvas>
+      </main>
+    </div>
+  );
+};
+
+export default Home;
