@@ -1,6 +1,5 @@
 "use client"
 import {ChangeEvent, FormEvent, useState} from 'react'
-<<<<<<< HEAD
 import React from 'react'
 
 
@@ -11,14 +10,6 @@ interface SearchBarProps {
 }
 
 const SearchBar = ({onSearch, handleSubmitButtonStyleChange} : SearchBarProps) => {
-=======
-
-interface SearchBarProps {
-    onSearch: (query: string) => void;
-}
-
-const SearchBar = ({onSearch} : SearchBarProps) => {
->>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
 
     const[query, setQuery] = useState('')
 
@@ -28,10 +19,7 @@ const SearchBar = ({onSearch} : SearchBarProps) => {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-<<<<<<< HEAD
         handleSubmitButtonStyleChange();
-=======
->>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
         onSearch(query);
     }
 
@@ -45,7 +33,7 @@ const SearchBar = ({onSearch} : SearchBarProps) => {
             type="text" 
             className=' mx-4
                         bordeer-gray-300 
-                        bg-blue-500
+                        bg-green-700
                         text-black
                         font-bold
                         rounded-[20px]
@@ -53,13 +41,13 @@ const SearchBar = ({onSearch} : SearchBarProps) => {
                         px-4 
                         w-200
                         focus:outline-none 
-                        focus:border-blue-500'
+                        focus:border-green-500'
             value={query}
             onChange={handleChange}
             />
             <button type='submit'
-                    className='bg-blue-500 
-                                hover:bg-blue-700 
+                    className='bg-green-700
+                                hover:
                                 text-black 
                                 font-bold 
                                 py-2 

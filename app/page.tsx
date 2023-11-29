@@ -1,5 +1,4 @@
 "use client"
-<<<<<<< HEAD
 
 import Head from 'next/head';
 import MovieSearch from './components/MovieSearch';
@@ -9,11 +8,6 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim";
-=======
-import Head from 'next/head';
-import MovieSearch from './components/MovieSearch';
-import React, { useEffect } from 'react';
->>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
 
 const Home: React.FC = () => {
   const handleCanvas2Click = () => {
@@ -34,7 +28,6 @@ const Home: React.FC = () => {
     document.body.removeChild(a);
   };
 
-<<<<<<< HEAD
   const handleSubmitButtonStyleChange = () => {
     const myDiv = document.getElementById(
       'myDiv'
@@ -44,21 +37,19 @@ const Home: React.FC = () => {
     myDiv.className = className;
   };
 
-=======
->>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
   useEffect(() => {
     // Code to draw on the first canvas
     const canvas1 = document.getElementById('myCanvas1') as HTMLCanvasElement;
     const context1 = canvas1.getContext('2d');
 
     if (context1) {
-      context1.fillStyle = 'blue';
+      context1.fillStyle = '#1a6113';
       context1.fillRect(50, 50, 1000, 1000);
-      context1.fillStyle = 'black';
+      context1.fillStyle = 'white';
       context1.fillRect(75, 75, 100, 100);
-      context1.fillStyle = 'blue';
+      context1.fillStyle = '#1a6113';
       context1.fillRect(100, 100, 50, 50);
-      context1.fillStyle = 'black';
+      context1.fillStyle = 'white';
       context1.fillRect(112.5, 112.5, 25, 25);
     }
 
@@ -66,13 +57,13 @@ const Home: React.FC = () => {
     const context2 = canvas2.getContext('2d');
 
     if (context2) {
-      context2.fillStyle = 'blue';
+      context2.fillStyle = '#1a6113';
       context2.fillRect(50, 50, 1000, 1000);
-      context2.fillStyle = 'black';
+      context2.fillStyle = 'white';
       context2.fillRect(75, 75, 100, 100);
-      context2.fillStyle = 'blue';
+      context2.fillStyle = '#1a6113';
       context2.fillRect(100, 100, 50, 50);
-      context2.fillStyle = 'black';
+      context2.fillStyle = 'white';
       context2.fillRect(112.5, 112.5, 25, 25);
     }
 
@@ -89,13 +80,8 @@ const Home: React.FC = () => {
       canvas2.removeEventListener('click', handleCanvas2Click);
     };
   }, []);
-<<<<<<< HEAD
   const particlesInit = useCallback(async engine => {
         console.log(engine);
-        // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        //await loadFull(engine);
         await loadSlim(engine);
     }, []);
 
@@ -107,7 +93,7 @@ const Home: React.FC = () => {
         <Particles id="tsparticles" options={{
                 background: {
                     color: {
-                        value: "#0d47a1",
+                        value: "#ffffff",
                     },
                 },
                 fpsLimit: 120,
@@ -135,10 +121,10 @@ const Home: React.FC = () => {
                 },
                 particles: {
                     color: {
-                        value: "#ffffff",
+                        value: "#000000",
                     },
                     links: {
-                        color: "#ffffff",
+                        color: "#113b0d",
                         distance: 150,
                         enable: true,
                         opacity: 0.5,
@@ -173,29 +159,16 @@ const Home: React.FC = () => {
                 },
                 detectRetina: true,
             }} init={particlesInit} loaded={particlesLoaded} />
-=======
-
-  return (
-    <div className="bg-black min-h-screen">
->>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
       <Head>
         <title>Movie Database</title>
         <meta name="description" content="Movie Database for users" />
       </Head>
 
-<<<<<<< HEAD
       <main id="myDiv" className="container mx-auto py-100 px-4 h-screen flex flex-col items-center content-ce justify-center relative">
-        <h1 className="text-7xl text-blue-500 font-bold mb-8">
+        <h1 className="text-7xl text-black font-bold mb-8">
           Movie Database
         </h1>
         <MovieSearch handleSubmitButtonStyleChange={handleSubmitButtonStyleChange} />
-=======
-      <main className="container mx-auto py-10 px-4 flex flex-col items-center justify-center relative">
-        <h1 className="text-7xl text-blue-500 font-bold mb-8">
-          Movie Database
-        </h1>
-        <MovieSearch />
->>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
 
         <canvas
           id="myCanvas1"

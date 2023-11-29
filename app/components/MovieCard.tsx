@@ -13,28 +13,24 @@ const MovieCard = ({title, overview, posterPath}: MovieCardProps) => {
     : '/no-image-available.jpg';
 
   return (
-    <div className="bg-blue-500
-<<<<<<< HEAD
-                    transition-rounded ease-in duration-200
-                    hover:rounded-[20px]
-                    hover:bg-blue-700
-                    shadow-xl
-=======
-                    hover:rounded-[20px]
-                    hover:bg-blue-700
->>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
+    <div className="
+                    bg-transparent-800
+                    transition-rounded ease-in duration-300
+                    hover:rounded-[25px]
+                    hover:bg-green-700
+                   
                     
                     p-4">
       <img className="w-full 
                     h-64 
-                    rounded-[20px]
+                    rounded-[25px]
                     mb-4" src={imageUrl} alt="" />
       <h2 className="text-2x1 
                     text-black 
                     font-bold 
                     mb-2">{title}</h2>
       <p className="text-sm 
-                    text-white">{overview.substring(0,150)}</p>
+                    text-black">{overview.substring(0,150)}</p>
     </div>
   )
 }
