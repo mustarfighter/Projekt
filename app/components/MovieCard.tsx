@@ -14,8 +14,8 @@ const MovieCard = ({title, overview, posterPath}: MovieCardProps) => {
 
   return (
     <div className="
-                    bg-transparent-800
-                    transition-rounded ease-in duration-300
+                    bg-transparent
+                    transition-rounded ease-in duration-200
                     hover:rounded-[25px]
                     hover:bg-green-700
                    
@@ -26,7 +26,7 @@ const MovieCard = ({title, overview, posterPath}: MovieCardProps) => {
                     rounded-[25px]
                     mb-4" src={imageUrl} alt="" />
       <h2 className="text-2x1 
-                    text-black 
+                    text-white
                     font-bold 
                     mb-2">{title}</h2>
       <p className="text-sm 

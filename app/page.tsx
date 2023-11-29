@@ -45,11 +45,11 @@ const Home: React.FC = () => {
     if (context1) {
       context1.fillStyle = '#1a6113';
       context1.fillRect(50, 50, 1000, 1000);
-      context1.fillStyle = 'white';
+      context1.fillStyle = 'black';
       context1.fillRect(75, 75, 100, 100);
       context1.fillStyle = '#1a6113';
       context1.fillRect(100, 100, 50, 50);
-      context1.fillStyle = 'white';
+      context1.fillStyle = 'black';
       context1.fillRect(112.5, 112.5, 25, 25);
     }
 
@@ -59,11 +59,11 @@ const Home: React.FC = () => {
     if (context2) {
       context2.fillStyle = '#1a6113';
       context2.fillRect(50, 50, 1000, 1000);
-      context2.fillStyle = 'white';
+      context2.fillStyle = 'black';
       context2.fillRect(75, 75, 100, 100);
       context2.fillStyle = '#1a6113';
       context2.fillRect(100, 100, 50, 50);
-      context2.fillStyle = 'white';
+      context2.fillStyle = 'black';
       context2.fillRect(112.5, 112.5, 25, 25);
     }
 
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
         <Particles id="tsparticles" options={{
                 background: {
                     color: {
-                        value: "#ffffff",
+                        value: "#00000",
                     },
                 },
                 fpsLimit: 120,
@@ -121,10 +121,10 @@ const Home: React.FC = () => {
                 },
                 particles: {
                     color: {
-                        value: "#000000",
+                        value: "#1a6113",
                     },
                     links: {
-                        color: "#113b0d",
+                        color: "#1a6113",
                         distance: 150,
                         enable: true,
                         opacity: 0.5,
@@ -165,7 +165,7 @@ const Home: React.FC = () => {
       </Head>
 
       <main id="myDiv" className="container mx-auto py-100 px-4 h-screen flex flex-col items-center content-ce justify-center relative">
-        <h1 className="text-7xl text-black font-bold mb-8">
+        <h1 className="text-7xl text-white font-bold mb-8">
           Movie Database
         </h1>
         <MovieSearch handleSubmitButtonStyleChange={handleSubmitButtonStyleChange} />
@@ -181,7 +181,7 @@ const Home: React.FC = () => {
           id="myCanvas2"
           width="200"
           height="200"
-          style={{ position: 'absolute', top: '0', right: '3%' }}
+          style={{ position: 'absolute', top: '0', right: '0' }}
         ></canvas>
       </main>
     </div>
