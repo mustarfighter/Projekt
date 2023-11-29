@@ -10,24 +10,6 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
 const Home: React.FC = () => {
-  const handleCanvas2Click = () => {
-    // Create a Blob with the desired text content
-    const textContent = 'Hello, this is the content of the downloaded file!';
-    const blob = new Blob([textContent], { type: 'text/plain' });
-
-    // Create an anchor element to trigger the download
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'download.txt';
-
-    // Append the anchor to the document and trigger the click event
-    document.body.appendChild(a);
-    a.click();
-
-    // Remove the anchor from the document
-    document.body.removeChild(a);
-  };
-
   const handleSubmitButtonStyleChange = () => {
     const myDiv = document.getElementById(
       'myDiv'
@@ -71,13 +53,10 @@ const Home: React.FC = () => {
       window.location.href = 'https://tengr.ai';
     });
 
-    canvas2.addEventListener('click', handleCanvas2Click);
-
     return () => {
       canvas1.removeEventListener('click', () => {
         window.location.href = 'https://tengr.ai';
       });
-      canvas2.removeEventListener('click', handleCanvas2Click);
     };
   }, []);
   const particlesInit = useCallback(async engine => {
