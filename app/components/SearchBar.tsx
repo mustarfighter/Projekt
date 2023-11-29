@@ -31,7 +31,7 @@ const SearchBar = ({onSearch} : SearchBarProps) => {
                         bg-blue-500
                         text-black
                         font-bold
-                        rounded-lg 
+                        rounded-[20px]
                         py-2 
                         px-4 
                         w-200
@@ -48,7 +48,7 @@ const SearchBar = ({onSearch} : SearchBarProps) => {
                                 py-2 
                                 px-4 
                                 ml-4 
-                                rounded'>
+                                rounded-[20px]'>
                 Search
             </button>
         </form>

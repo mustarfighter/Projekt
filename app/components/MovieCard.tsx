@@ -14,11 +14,13 @@ const MovieCard = ({title, overview, posterPath}: MovieCardProps) => {
 
   return (
     <div className="bg-blue-500
-                    rounded 
+                    hover:rounded-[20px]
+                    hover:bg-blue-700
+                    
                     p-4">
       <img className="w-full 
                     h-64 
-                    rounded 
+                    rounded-[20px]
                     mb-4" src={imageUrl} alt="" />
       <h2 className="text-2x1 
                     text-black 
