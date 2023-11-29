@@ -1,4 +1,5 @@
 "use client"
+<<<<<<< HEAD
 
 import Head from 'next/head';
 import MovieSearch from './components/MovieSearch';
@@ -8,6 +9,11 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim";
+=======
+import Head from 'next/head';
+import MovieSearch from './components/MovieSearch';
+import React, { useEffect } from 'react';
+>>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
 
 const Home: React.FC = () => {
   const handleCanvas2Click = () => {
@@ -28,6 +34,7 @@ const Home: React.FC = () => {
     document.body.removeChild(a);
   };
 
+<<<<<<< HEAD
   const handleSubmitButtonStyleChange = () => {
     const myDiv = document.getElementById(
       'myDiv'
@@ -37,6 +44,8 @@ const Home: React.FC = () => {
     myDiv.className = className;
   };
 
+=======
+>>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
   useEffect(() => {
     // Code to draw on the first canvas
     const canvas1 = document.getElementById('myCanvas1') as HTMLCanvasElement;
@@ -80,6 +89,7 @@ const Home: React.FC = () => {
       canvas2.removeEventListener('click', handleCanvas2Click);
     };
   }, []);
+<<<<<<< HEAD
   const particlesInit = useCallback(async engine => {
         console.log(engine);
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -163,16 +173,29 @@ const Home: React.FC = () => {
                 },
                 detectRetina: true,
             }} init={particlesInit} loaded={particlesLoaded} />
+=======
+
+  return (
+    <div className="bg-black min-h-screen">
+>>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
       <Head>
         <title>Movie Database</title>
         <meta name="description" content="Movie Database for users" />
       </Head>
 
+<<<<<<< HEAD
       <main id="myDiv" className="container mx-auto py-100 px-4 h-screen flex flex-col items-center content-ce justify-center relative">
         <h1 className="text-7xl text-blue-500 font-bold mb-8">
           Movie Database
         </h1>
         <MovieSearch handleSubmitButtonStyleChange={handleSubmitButtonStyleChange} />
+=======
+      <main className="container mx-auto py-10 px-4 flex flex-col items-center justify-center relative">
+        <h1 className="text-7xl text-blue-500 font-bold mb-8">
+          Movie Database
+        </h1>
+        <MovieSearch />
+>>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
 
         <canvas
           id="myCanvas1"

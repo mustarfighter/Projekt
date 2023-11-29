@@ -1,5 +1,6 @@
 "use client"
 import {ChangeEvent, FormEvent, useState} from 'react'
+<<<<<<< HEAD
 import React from 'react'
 
 
@@ -10,6 +11,14 @@ interface SearchBarProps {
 }
 
 const SearchBar = ({onSearch, handleSubmitButtonStyleChange} : SearchBarProps) => {
+=======
+
+interface SearchBarProps {
+    onSearch: (query: string) => void;
+}
+
+const SearchBar = ({onSearch} : SearchBarProps) => {
+>>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
 
     const[query, setQuery] = useState('')
 
@@ -19,7 +28,10 @@ const SearchBar = ({onSearch, handleSubmitButtonStyleChange} : SearchBarProps) =
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
+<<<<<<< HEAD
         handleSubmitButtonStyleChange();
+=======
+>>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
         onSearch(query);
     }
 

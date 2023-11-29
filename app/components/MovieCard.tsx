@@ -14,10 +14,15 @@ const MovieCard = ({title, overview, posterPath}: MovieCardProps) => {
 
   return (
     <div className="bg-blue-500
+<<<<<<< HEAD
                     transition-rounded ease-in duration-200
                     hover:rounded-[20px]
                     hover:bg-blue-700
                     shadow-xl
+=======
+                    hover:rounded-[20px]
+                    hover:bg-blue-700
+>>>>>>> ea5b53dfa40e3c052178c81f27c72d6ca3dd94f6
                     
                     p-4">
       <img className="w-full 
